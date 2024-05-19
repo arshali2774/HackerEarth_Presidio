@@ -1,6 +1,8 @@
 import express, { urlencoded } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { connectToDB } from './src/config/db.config.js';
+import UserModel from './src/models/user/user.schema.js';
 
 // Load environment variables
 dotenv.config();
@@ -20,4 +22,5 @@ const port = process.env.PORT || 3000;
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
+  connectToDB();
 });
