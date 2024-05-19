@@ -5,6 +5,9 @@ const UserController = {
   async createUser(req, res, next) {
     try {
       const newUser = await UserRepository.createUser(req.body);
+      if (!newUser?.success) {
+        return res.status(409).json(newUser);
+      }
       const { _id, firstName, lastName, email, phoneNumber, role } = newUser;
       res.status(201).json({
         success: true,

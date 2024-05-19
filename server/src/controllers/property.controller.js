@@ -101,6 +101,7 @@ const PropertyController = {
     }
   },
   async filterProperties(req, res, next) {
+    console.log(req.query);
     try {
       const filters = {
         minPrice: req.query.minPrice,

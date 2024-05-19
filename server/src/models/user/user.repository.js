@@ -6,7 +6,7 @@ const UserRepository = {
       // Check if the user already exists
       const existingUser = await UserModel.findOne({ email: userData.email });
       if (existingUser) {
-        throw new Error('User already exists');
+        return { success: false, error: 'User already exists' };
       }
       // Create the new user
       const user = new UserModel(userData);

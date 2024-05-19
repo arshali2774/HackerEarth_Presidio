@@ -11,6 +11,9 @@ propertyRouter.get(
 
   PropertyController.getPropertiesForSeller
 );
+propertyRouter.get('/all', PropertyController.getAllProperties);
+propertyRouter.get('/filter', PropertyController.filterProperties);
+
 // Route to fetch property details along with seller information
 
 propertyRouter.get('/:propertyId', PropertyController.getPropertyDetails);
@@ -28,7 +31,5 @@ propertyRouter.delete(
   authorizeSeller,
   PropertyController.deleteProperty
 );
-propertyRouter.get('/all', PropertyController.getAllProperties);
-propertyRouter.get('/filter', PropertyController.filterProperties);
 
 export default propertyRouter;

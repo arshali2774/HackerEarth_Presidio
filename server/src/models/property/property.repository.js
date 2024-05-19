@@ -94,7 +94,7 @@ const PropertyRepository = {
       }
 
       // Find properties based on the constructed query
-      const properties = await Property.find(query);
+      const properties = await PropertyModel.find(query);
       return properties;
     } catch (error) {
       // Handle any errors that occur during property retrieval
